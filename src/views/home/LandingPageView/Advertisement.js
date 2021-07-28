@@ -12,10 +12,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link, Box, Container, Typography } from '@material-ui/core';
 import { MButton } from 'src/theme';
 import { Link as RouterLink } from 'react-router-dom';
-import ExImg from './images/rocket_web.png';
-import './APP.css';
 
-// -----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// -----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
 const getImg = (width) =>
   `${BASE_IMG}w_${width}/v1611481147/upload_minimal/home/rocket.png`;
@@ -54,7 +52,19 @@ function Advertisement({ className }) {
       <Container maxWidth="lg">
         <div className={classes.container}>
           <MotionInView variants={varFadeInUp} sx={{ mb: { xs: 3, md: 0 } }}>
-            <img src={ExImg} id="box_rocket"></img>
+            <Box
+              component="img"
+              alt="rocket"
+              src={getImg(600)}
+              srcSet={`${getImg(600)} 600w, ${getImg(960)} 960w`}
+              sx={{
+                maxWidth: 460,
+                transform: {
+                  xs: 'translateX(-10%)',
+                  md: 'translateX(0)'
+                }
+              }}
+            />
           </MotionInView>
 
           <Box

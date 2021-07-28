@@ -367,7 +367,3 @@
     padding: 20px;
   }
 }
-
-@media screen and (max-width: 920px) {
-  #box_rocket {transform:translateX(-10%);}
-}
